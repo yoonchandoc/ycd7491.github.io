@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
 
 <meta property="og:site_name" content="babyparty" />
-<meta property="og:title" content="축하해 주세요." />
-<meta property="og:description" content="2016년 2월 3일 오후 1시~3시, 봄 우리아이 생일을 축하해주세요~" />
+<meta property="og:title" content=" 축하해 주세요." />
+<meta property="og:description" content="2016년 2월 3일 오후 1시, 봄파티에서 우리아이 생일을 축하해주세요~" />
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/16554116/12774533/375b55dc-ca89-11e5-9829-e5984d1d2efa.jpg" />
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/16554116/12774535/375cf090-ca89-11e5-8589-c69d0f62defb.jpg" />
 <meta property="og:type" content="website" />
@@ -209,10 +209,10 @@ body {
 			<a href="mailto:rmsidtest@gmail.com" class="bg3"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-email-envelope-mail-outline-stroke-128.png" alt="email" />이메일</a>
 		</div>
 		<div class="date_wrap">
-			<span><img src="https://cdn2.iconfinder.com/data/icons/office-38/24/office-40-128.png" alt="time" />초대일시 : <strong>2016년 5월 1일 오후 1시~3시</strong></span>
+			<span><img src="https://cdn2.iconfinder.com/data/icons/office-38/24/office-40-128.png" alt="time" />초대일시 : <strong>2016년 02월 03일 오후 1시</strong></span>
 		</div>
 		<div class="addr_wrap">
-			<span><img src="https://cdn4.iconfinder.com/data/icons/miu/24/house-home-real_estate-property-glyph-128.png" alt="place" />초대장소 : <strong>서울올림픽파크텔</strong> | 경기도 성남시 분당구 수내동21-1MS Plaza 10층</span>
+			<span><img src="https://cdn4.iconfinder.com/data/icons/miu/24/house-home-real_estate-property-glyph-128.png" alt="place" />초대장소 : <strong>봄파티</strong> | 경기도 성남시 분당구 수내동21-1MS Plaza 10층</span>
 		</div>
 		<div class="map_wrap" id="map"></div>
 		<div class="tras_wrap">
@@ -274,13 +274,15 @@ body {
 		});
 		targetEle.css({"display" : "block"});
 		var tmpHeight = 0;
-		targetEle.find("img").each(function(k, v) {
-			var _this = $(this);
-			if( tmpHeight == 0 || tmpHeight > _this.height() ) {
-				tmpHeight = _this.height();
-			}
+		targetEle.find("img").first().load(function(e) {
+			targetEle.find("img").each(function(k, v) {
+				var _this = $(this);
+				if( tmpHeight == 0 || tmpHeight > _this.height() ) {
+					tmpHeight = _this.height();
+				}
+			});
+			$(".slide_wrap").height(tmpHeight);
 		});
-		$(".slide_wrap").height(tmpHeight);
 	});
 	
 	</script>
